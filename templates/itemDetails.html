@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Item Details</title>
+  </head>
+  <body>
+    <span>
+        <a href="/items">View items</a>
+        <a href="/">Create an item</a>
+    </span>
+    <br>
+    <h1>{{item["name"]}} Details</h1>
+    <img src="/static/{{item['item_image']}}" style="width: 200px;"/><br>
+    <span>{{item["description"]}}</span><br>
+    <span>{{item["review"]}}</span><br>
+
+    {% for review in reviews %}
+    <span>{{review["review_desc"]}}</span><br>
+    <span>{{review["stars"]}}</span><br><br>
+    {% endfor %}
+
+    <br><br>
+    <form action="/review" method="POST" role="form">
+        <input type="hidden" name="item_id" id="item_id" value="{{item['_id']}}"/>
+        <label for="review_desc">Please input your review for this item</label><br>
+        <input type="text" name="review_desc" id="review_desc"/><br>
+        <label for="image">Attach a picture of the item</label><br>
+        <input type="file" name="image" id="image" accept="image/"/><br>
+        <label for="stars">How many stars would you rate this item?</label><br>
+        <input type="number" name="stars" id="stars"><br>
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

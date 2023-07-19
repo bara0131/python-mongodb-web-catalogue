@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Write a review</title>
+    </head>
+    <body>
+    <span>
+        <a href="/items">View items</a>
+         <a href="/">Create an item</a>
+    </span>
+    <h1>Write a Review</h1>
+            <form action="/data" method="POST" role="form">
+                <label for="review_desc">Please input your review for this item</label><br>
+                <input type="text" name="review_desc" id="review_desc"/><br>
+                <label for="image">Attach a picture of the item</label><br>
+                <input type="file" name="image" id="image" accept="image/"/><br>
+                <label for="stars">How many stars would you rate this item?</label><br>
+                <input type="number" name="stars" id="stars"><br>
+                <input type="submit" value="Submit">
+            </form>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Item creation</title>
+    </head>
+    <body>
+    <span>
+        <a href="/items">View items</a>
+         <a href="/">Create an item</a>
+    </span>
+        <h1>Create an item</h1>
+        <form action="/insert_item" method="POST" role="form">
+            <label for="name">Enter the item's name</label><br>
+            <input type="text" name="name" id="name"/><br>
+            <label for="description">Enter a description</label><br>
+            <input type="text" name="description" id="description"/><br>
+            <label for="item_image">Add a picture</label><br>
+            <input type="file" name="item_image" id="item_image" accept="image/"/><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

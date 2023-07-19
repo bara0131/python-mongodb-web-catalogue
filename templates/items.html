@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Item catalogue</title>
+    </head>
+    <body>
+        <span>
+            <a href="/items">View items</a>
+            <a href="/">Create an item</a>
+        </span>
+        <h1>Item Catalogue</h1>
+        <!-- Retrieve items from the database -->
+        {% for item in items %}
+            <img src="static/{{item['item_image']}}" style="width: 200px;"/>
+            <span><a href="{{url_for('view_item', item_id=item['_id'])}}">Name: {{item["name"]}}</a></span><br>
+            <span>Description: {{item["description"]}}</span><br>
+            <br><br>
+        {% endfor %}
+    </body>
+</html>
